@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drinkit — Quick Shopping</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="brand">Drink<span>it</span></div>
+  <div class="location">📍 <span>Deliver to</span><b> Your Location</b></div>
+  <div class="search"><input id="search" placeholder="Search products..."> 🔎</div>
+  <button class="cartBtn" onclick="openCart()">🛒 Cart <b id="cartCount">0</b></button>
+</header>
+
+<section class="hero">
+  <div><p class="tag">FAST • FRESH • SIMPLE</p><h1>Everything you need,<br><span>delivered fast.</span></h1>
+  <p>Shop daily essentials, snacks, beverages and more.</p>
+  <button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now →</button></div>
+  <div class="heroArt">🛍️<div>⚡</div></div>
+</section>
+
+<nav class="cats">
+  <button class="active" onclick="filterCat('All',this)">All</button>
+  <button onclick="filterCat('Fruits',this)">🍎 Fruits</button>
+  <button onclick="filterCat('Snacks',this)">🍿 Snacks</button>
+  <button onclick="filterCat('Drinks',this)">🥤 Drinks</button>
+  <button onclick="filterCat('Grocery',this)">🛒 Grocery</button>
+  <button onclick="filterCat('Personal Care',this)">🧴 Personal Care</button>
+</nav>
+
+<main id="products"><div class="sectionHead"><h2>Popular products</h2><span id="resultText">12 items</span></div><div id="grid" class="grid"></div></main>
+
+<aside id="drawer" class="drawer">
+  <div class="drawerHead"><h2>Your Cart</h2><button onclick="closeCart()">✕</button></div>
+  <div id="cartItems"></div>
+  <div class="summary"><div><span>Subtotal</span><b id="subtotal">₹0</b></div><div><span>Delivery</span><b>₹20</b></div><hr><div class="total"><span>Total</span><b id="total">₹20</b></div><button class="checkout" onclick="checkout()">Proceed to Checkout</button></div>
+</aside>
+<div id="overlay" onclick="closeCart()"></div>
+
+<footer>© 2026 Drinkit • Quick Shopping Demo</footer>
+<script src="script.js"></script>
+</body>
+</html>
